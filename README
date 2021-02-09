@@ -1,0 +1,19 @@
+A script to derive standardized smoking and drinking variables from the UK Biobank for the GSCAN project. These variables were used in two published association studies, referred to as Exome and GWAS, respectively:
+
+Brazel, D. M., Jiang, Y., Hughey, J. M., Turcot, V., Zhan, X., Gong, J., … Tobin, M. D. (2018). Exome Chip Meta-analysis Fine Maps Causal Variants and Elucidates the Genetic Architecture of Rare Coding Variants in Smoking and Alcohol Use. Biological Psychiatry. https://doi.org/10.1016/j.biopsych.2018.11.024
+Liu, M., Jiang, Y., Wedow, R., Li, Y., Brazel, D. M., Chen, F., … Vrieze, S. (2019). Association studies of up to 1.2 million individuals yield new insights into the genetic etiology of tobacco and alcohol use. Nature Genetics, 51(2), 237. https://doi.org/10.1038/s41588-018-0307-5
+
+The GSCAN phenotype definitions were used: https://genome.psych.umn.edu/images/c/ca/GSCAN_EXOME_CHIP_ANALYSIS_PLAN-v2.2.pdf and https://genome.psych.umn.edu/images/d/da/GSCAN_GWAS_Phenotype_Definitions-2-24-2016.pdf. The variables provided are:
+
+1. qcpd -- The average number of cigarettes smoked per day while a regular smoker of cigarettes, either currently (for a current smoker) or in the past (for a previous smoker). This variable will be missing for those who were never regular smokers of cigarettes.
+2. cpd_gwas -- qcpd, binned according to the GWAS phenotype definition.
+3. cpd_exome -- qcpd, binned according to the Exome phenotype definition.
+4. si -- smoking initiation, a binary phenotype, 1 if the subject denies ever being a regular smoker, 2 if they were a regular smoker at some point in their lives. 
+5. sc -- smoking cessation, a binary phenotype, 1 if the subject is a former smoker, 2 if they are a current smoker, missing if they were never a regular smoker
+6. py -- qcpd divided by 20 to yield number of packs, multiplied by length of the period of regular smoking in years
+7. ai -- age of initiation of regular smoking
+8. dpw -- standard alcoholic drinks per week, using the NIAAA definition of a standard drink
+9. currFormSmoker -- current or former smoker, 1 if the subject was formerly a regular smoker, 2 if they are currently a regular smoker. Identical to SC but used as a covariate in some analyses.
+10. currFormDrinker -- current or former drinker, 1 if the subject was formerly a drinker, 2 if they are currently a drinker.
+11. dnd, drinker or non-drinker, 1 if not currently a drinker, 2 if currently a drinker
+
